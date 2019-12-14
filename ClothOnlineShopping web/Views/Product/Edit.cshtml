@@ -1,0 +1,39 @@
+﻿@model ClothOnlineShopping.Entities1.Product
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Product</h2>
+<form id="editProduct">
+    <input type="hidden" name="id"  value="@Model.Id"/>
+
+    <lable>Name</lable>
+    <input name="Name"  value="@Model.Name"/>
+    <br />
+    <lable>Description</lable>
+    <input name="description" value="@Model.Description" />
+    <br />
+    <lable>Price</lable>
+    <input name="price" value="@Model.Price" />
+    <br />
+    <button type="button" id="updatebtn">Update</button>
+</form>
+
+<script>
+    $("#updatebtn").click(function () {
+
+        $.ajax({
+            type: 'POST',
+            url: '/Product/Edit',
+            data: $("#editProduct").serialize()
+        })
+            .done(function (response) {
+                $("#tblContainer").html(response);
+                $("#actionContainer").html('');
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                alert("Fail" + textStatus);
+            });
+    });
+</script>

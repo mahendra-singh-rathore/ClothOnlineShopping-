@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClothOnlineShopping.Database
 {
-    class COSContext:DbContext
+   public class COSContext:DbContext
     {
         public COSContext():base("ClothOnlineShopping")
         {

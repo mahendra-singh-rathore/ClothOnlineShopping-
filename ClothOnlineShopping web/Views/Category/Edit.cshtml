@@ -1,0 +1,12 @@
+﻿@model ClothOnlineShopping.Entities1.Category
+<h2>Edit Categoy</h2>
+<form method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <lable>Name</lable>
+    <input name="Name" value="@Model.Name" />
+    <br />
+    <lable>Description</lable>
+    <input name="description" value="@Model.Description" />
+    <br />
+    <button>Edit</button>
+</form>
